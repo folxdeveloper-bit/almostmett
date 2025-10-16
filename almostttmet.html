@@ -1,0 +1,1277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2022.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    span.s1 {font: 12.0px 'Apple Color Emoji'}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Mandatory viewport meta tag for responsive design --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;ALMOST_MET.EXE - Home&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Load compiled Tailwind CSS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="output.css" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;family=Merriweather:wght@400;700&amp;display=swap" rel="stylesheet" onerror="console.error('Failed to load fonts')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* ------------------- COMMON CSS STYLES ------------------- */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Define the color scheme for a retro look */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--background: #0A192F; --primary: #CCFF00; --accent: #00BCD4; --text: #F5F5F5;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--background);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>/* Retro scanline/grid effect for background */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-image:<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>linear-gradient(rgba(0,188,212,0.1) 1px, transparent 1px),<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>linear-gradient(90deg, rgba(0,188,212,0.1) 1px, transparent 1px),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>repeating-linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.1) 50%, rgba(0,0,0,0.2) 51%, rgba(0,0,0,0) 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-size: clamp(10px, 2vw, 20px) clamp(10px, 2vw, 20px), clamp(10px, 2vw, 20px) clamp(10px, 2vw, 20px), 100% 3px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text); font-family: 'Roboto', Arial, sans-serif;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: clamp(0.875rem, 2vw, 1rem);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>/* Retro cursor */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAADpJREFUGBljZGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYAAAEw4M3QAAAABJRU5ErkJggg=='), auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0; padding: 0; min-height: 100vh; display: flex; flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 60px;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>main { flex: 1; padding-top: clamp(2rem, 5vw, 5rem); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>section {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: clamp(1.5rem, 3vw, 3rem) clamp(1rem, 4vw, 3rem);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: clamp(1.5rem, 3vw, 3rem);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-shrink: 0;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.page-content { display: none; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.page-content.active { display: block; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container { max-width: min(95vw, 1200px); margin-left: auto; margin-right: auto; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.terminal {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--background); border: 2px solid var(--accent);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: clamp(1rem, 2vw, 2rem);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 clamp(4px, 1vw, 8px) var(--primary), clamp(2px, 0.5vw, 4px) clamp(2px, 0.5vw, 4px) 0 var(--accent);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>image-rendering: pixelated; position: relative;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.input-field {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #1A2A44; border: 2px solid var(--accent); color: var(--text);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Roboto', Arial, sans-serif;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: clamp(0.5rem, 1vw, 0.75rem); width: 100%;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: clamp(0.75rem, 1.5vw, 0.875rem); transition: all 0.2s;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.input-field:focus { box-shadow: 0 0 clamp(6px, 1.5vw, 10px) var(--primary), inset 0 0 5px var(--primary); border-color: var(--primary); outline: none; background: #0D1726; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.input-field:disabled { background: #0D1726; border-color: #555; color: #aaa; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-retro {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--primary); color: var(--background); border: 2px solid var(--accent);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vw, 1.5rem); font-family: 'Roboto', Arial, sans-serif;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: clamp(0.75rem, 1.5vw, 0.875rem); box-shadow: clamp(2px, 0.5vw, 3px) clamp(2px, 0.5vw, 3px) 0 var(--accent);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>image-rendering: pixelated; transition: all 0.2s; cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-retro:hover { background: var(--accent); color: var(--background); transform: translate(-clamp(1px, 0.25vw, 2px), -clamp(1px, 0.25vw, 2px)); box-shadow: clamp(3px, 0.75vw, 5px) clamp(3px, 0.75vw, 5px) 0 var(--primary); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.submit-button {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--primary); color: var(--background); border: 2px solid var(--accent);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: clamp(0.75rem, 1.5vw, 1rem) clamp(1.5rem, 3vw, 2rem); font-family: 'Roboto', Arial, sans-serif;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: clamp(0.9rem, 1.8vw, 1.1rem); box-shadow: 0 0 15px var(--primary), 5px 5px 0 var(--accent);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>image-rendering: pixelated; transition: all 0.2s; width: 100%; margin-top: clamp(0.5rem, 1vw, 1rem);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold; cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.submit-button:hover { background: #E0FF30; color: var(--background); transform: translate(-clamp(1px, 0.25vw, 2px), -clamp(1px, 0.25vw, 2px)); box-shadow: 0 0 20px var(--accent), 6px 6px 0 var(--primary); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1, h2, h3 {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Merriweather', Georgia, serif; color: var(--primary);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: clamp(1.25rem, 3vw, 2.5rem);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.h2-blinking { border-right: clamp(0.1em, 0.25vw, 0.15em) solid var(--primary); animation: blink-caret 0.75s step-end infinite; width: fit-content; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--primary); } }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.story-card { background: #0D1726; border: 1px solid var(--accent); padding: clamp(0.75rem, 1.5vw, 1rem); cursor: pointer; transition: all 0.2s; box-shadow: inset 0 0 5px rgba(0, 188, 212, 0.2); display: flex; flex-direction: column; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.story-card:hover { border-color: var(--primary); box-shadow: 0 0 8px var(--primary); transform: translateY(-2px); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card-meta { font-size: clamp(0.65rem, 1.2vw, 0.75rem); color: var(--accent); text-transform: uppercase; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card-title { font-size: clamp(0.9rem, 1.8vw, 1.1rem); color: var(--text); font-weight: bold; margin-bottom: clamp(0.25rem, 0.5vw, 0.5rem); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal { position: fixed; inset: 0; background: rgba(10,25,47,0.95); display: none; align-items: center; justify-content: center; z-index: 1000; border: 2px dashed var(--accent); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal.active { display: flex; animation: fadeIn 0.5s ease-in; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal-content {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--background); padding: clamp(1rem, 2vw, 2rem);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: clamp(2px, 0.5vw, 4px) clamp(2px, 0.5vw, 4px) 0 var(--primary);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: min(95vw, 600px); width: 95%;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative; border: 2px solid var(--accent);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>image-rendering: pixelated;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-height: 90vh;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-y: auto;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.calendar-grid {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(7, 1fr);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 2px;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 400px;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.calendar-header, .day-cell {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: clamp(0.25rem, 0.5vw, 0.5rem);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: clamp(0.75rem, 1.5vw, 0.9rem);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.calendar-header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #1A2A44;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.day-cell {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #0D1726;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.1s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid transparent;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.day-cell:hover:not(.empty):not(.today) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #1A2A44;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.empty {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--background);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px dashed #1A2A44;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: default;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.today {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 2px solid var(--primary);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 5px var(--primary);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.selected {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--primary) !important;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--background) !important;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 10px var(--primary);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.time-input-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.time-input-container input {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: clamp(50px, 10vw, 80px);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#bottom-nav {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed; bottom: 0; left: 0; right: 0; display: none;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-around; align-items: center; height: 55px;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--background); border-top: 2px solid var(--accent); z-index: 100;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: env(safe-area-inset-bottom);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#bottom-nav a {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex; flex-direction: column; align-items: center; justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex: 1; height: 100%; color: var(--text); text-decoration: none; font-size: 0.65rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: color 0.2s, background-color 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#bottom-nav a.active { color: var(--primary); border-top: 3px solid var(--primary); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.nav-icon { font-family: 'Courier New', monospace; font-size: 1.2rem; margin-bottom: 2px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 768px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>#bottom-nav { display: flex; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.top-nav-links { display: none; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>header { display: block !important; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>header nav { justify-content: center; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.footer-cursor { display: none !important; }<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>main { padding-top: clamp(4rem, 6vw, 6rem); }<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>#footer-links { flex-direction: column; align-items: center; gap: 0.5rem; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>#footer-links a { margin: 0 !important; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 769px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>header {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>position: fixed; top: 0; left: 0; right: 0; z-index: 50;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>background: var(--background); padding: 0.5rem 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>border-bottom: 1px solid var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>header nav {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>display: flex; justify-content: space-between; align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>max-width: 1200px; margin: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>header a { color: var(--text); margin-left: 1rem; text-decoration: none; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>header a.title { color: var(--primary); font-family: 'Merriweather'; font-size: 1.25rem; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>header a:hover { color: var(--accent); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>main { padding-top: clamp(4rem, 6vw, 6rem); }<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>body { padding-bottom: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.footer-cursor {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed; bottom: 0; right: 0; padding: 0.5rem 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(0, 0, 0, 0.5); color: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.75rem; border-top: 1px solid var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 90;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.loading-screen {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed; inset: 0; background: var(--background); color: var(--primary);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex; flex-direction: column; justify-content: center; align-items: center;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 9999; text-align: center;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.error-text {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #FF6347;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: clamp(0.75rem, 1.5vw, 0.875rem);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 0.25rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#points-popup {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed; top: 1rem; right: 1rem;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--primary); color: var(--background);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.75rem 1.25rem; border-radius: 0.25rem;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 1000; opacity: 0; transition: opacity 0.5s, transform 0.5s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-20px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 2px solid var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#points-popup.active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(0);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="loading-screen" class="loading-screen"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1 class="text-4xl"&gt;ALMOST_MET.EXE &lt;span class="fade"&gt;█&lt;/span&gt;&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="text-xl mt-6 fade"&gt;&gt; INITIALIZING BANGALORE CONNECTIONS... PRESS ANY KEY OR CLICK TO CONTINUE&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header class="hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#home" class="title"&gt;ALMOST_MET.EXE&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="top-nav-links"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#home" class="text-[var(--primary)]" data-target="home"&gt;Home [H:]&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#profile" data-target="profile"&gt;Profile [P:]&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#about" data-target="about"&gt;About [A:]&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#" id="logout-btn"&gt;Logout [X]&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;main class="flex flex-col hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="home" class="page-content active"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;section id="submit"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="container mx-auto max-w-[min(90vw,600px)] terminal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-2xl mb-[clamp(1rem,2vw,2rem)] h2-blinking"&gt;&gt; POST YOUR BANGALORE MISSED CONNECTION&lt;/h2&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;form id="submit-form" class="space-y-4" novalidate&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="space-y-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;label class="block text-[var(--text)]"&gt;&gt; TITLE:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input id="title" type="text" class="input-field" placeholder="e.g., MG Road Coffee Encounter" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p id="title-error" class="error-text hidden"&gt;&gt; ERROR: TITLE REQUIRED&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="space-y-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;label class="block text-[var(--text)]"&gt;&gt; DATE &amp; TIME (IST SUGGESTED):&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex space-x-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;input id="when-display" type="text" class="input-field flex-grow cursor-pointer" readonly<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>placeholder="Click to select Date &amp; Time" data-action="open-calendar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;button type="button" class="btn-retro flex-shrink-0" data-action="open-calendar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&gt; SELECT</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input type="hidden" id="when-iso" required value=""&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-xs text-[var(--accent)]"&gt;&gt; Note: Time is stored in browser-local time, use IST equivalent.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p id="when-error" class="error-text hidden"&gt;&gt; ERROR: DATE &amp; TIME REQUIRED&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="space-y-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;label class="block text-[var(--text)]"&gt;&gt; LOCATION:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input id="where" type="text" class="input-field" placeholder="e.g., Indiranagar Arcade" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p id="where-error" class="error-text hidden"&gt;&gt; ERROR: LOCATION REQUIRED&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="space-y-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;label class="block text-[var(--text)]"&gt;&gt; CATEGORY:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;select id="category" class="input-field" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;option value=""&gt;-- SELECT CATEGORY --&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;option value="Metro"&gt;Metro/Public Transport&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;option value="Cafe"&gt;Cafe/Restaurant&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;option value="Bar"&gt;Bar/Pub&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;option value="Street"&gt;Street/Market&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;option value="Event"&gt;Event/Concert&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;option value="Park"&gt;Park/Outdoor&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;option value="Other"&gt;Other&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="space-y-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;label class="block text-[var(--text)]"&gt;&gt; DESCRIPTION (MAX 280 CHARS):&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;textarea id="description" rows="6" maxlength="280" class="input-field" placeholder="e.g., Saw you with a yellow scarf..." required&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-xs text-[var(--accent)] text-right"&gt;&lt;span id="char-count"&gt;0&lt;/span&gt; / 280&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p id="description-error" class="error-text hidden"&gt;&gt; ERROR: DESCRIPTION REQUIRED&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="space-y-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;label class="block text-[var(--text)]"&gt;&gt; PUBLIC CONTACT (OPTIONAL - HANDLE/SOCIAL):&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input id="contact" type="text" class="input-field" placeholder="e.g., Instagram handle"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="space-y-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;label class="block text-[var(--text)]"&gt;&gt; **PRIVATE REPLY EMAIL** (OPTIONAL - ONLY VISIBLE IF MATCH FOUND):&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input id="reply-email" type="email" class="input-field" placeholder="e.g., your@email.com"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p id="email-error" class="error-text hidden"&gt;&gt; ERROR: INVALID EMAIL FORMAT&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex items-center space-x-2 pt-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;label class="text-[var(--text)]"&gt;&gt; KEEP PRIVATE? (NOT VISIBLE TO OTHERS):&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input type="checkbox" id="private" class="input-field" style="width: auto; padding: 0; margin-top: 0; transform: scale(1.5);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button type="submit" class="submit-button"&gt;&gt; TRANSMIT CONNECTION&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p id="submit-message" class="text-[var(--primary)] mt-[clamp(0.5rem,1vw,1.5rem)] hidden"&gt;&gt; TRANSMISSION COMPLETE!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/section&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;section id="connections"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="container mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-2xl mb-[clamp(0.5rem,1vw,1.5rem)] text-center h2-blinking"&gt;&gt; BANGALORE MISSED CONNECTIONS&lt;/h2&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="terminal p-[clamp(0.5rem,1vw,1.5rem)] mb-[clamp(1rem,2vw,2rem)]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input id="search" type="text" class="input-field flex-grow"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                                </span>placeholder="&gt; SEARCH CONNECTIONS (TITLE, LOCATION, DESCRIPTION)..."<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                                </span>oninput="filterConnections()"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                            </span></p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button id="filter-btn" class="btn-retro flex-shrink-0 w-full sm:w-auto" data-action="open-filter"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&gt; FILTER <span class="s1">⚙️</span></p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div id="connection-list"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>class="terminal p-[clamp(0.5rem,1vw,1.5rem)]<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                            </span>grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[clamp(0.5rem,1vw,1rem)]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="profile" class="page-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;section id="profile-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="container mx-auto max-w-[min(90vw,800px)] terminal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-2xl mb-[clamp(1rem,2vw,2rem)] h2-blinking"&gt;&gt; USER_PROFILE.DAT&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="space-y-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-lg text-[var(--primary)]"&gt;&gt; ACCESS ID: &lt;span id="profile-user-id" class="text-[var(--text)]"&gt;&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div id="handle-editor" class="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-lg text-[var(--primary)] flex-shrink-0"&gt;&gt; CURRENT HANDLE:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input id="profile-handle" type="text" class="input-field max-w-full sm:max-w-xs" placeholder="Enter your handle"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button class="btn-retro hidden w-full sm:w-auto" id="save-handle-btn"&gt;&gt; SAVE&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p id="handle-error" class="error-text hidden text-center"&gt;&gt; ERROR: HANDLE MUST BE 3+ CHARACTERS (NO SPECIAL CHARACTERS)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-lg text-[var(--primary)]"&gt;&gt; CONNECTION POINTS: &lt;span id="profile-points" class="text-[var(--text)]"&gt;0&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-lg text-[var(--primary)]"&gt;&gt; PRIVATE REPLY EMAIL: &lt;span id="profile-email" class="text-[var(--text)]"&gt;N/A&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;section id="my-connections"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="container mx-auto max-w-[min(90vw,800px)] terminal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-2xl mb-[clamp(1rem,2vw,2rem)] h2-blinking"&gt;&gt; MY POSTS (UPLOADED_FILES)&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div id="my-connection-list" class="space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-center text-[var(--accent)]"&gt;&gt; NO POSTS FOUND. POST ONE ON THE HOME PAGE.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/section&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;section id="my-signals"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="container mx-auto max-w-[min(90vw,800px)] terminal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-2xl mb-[clamp(1rem,2vw,2rem)] h2-blinking"&gt;&gt; INCOMING SIGNALS (MATCHES)&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div id="signal-list" class="space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-center text-[var(--accent)]"&gt;&gt; NO INCOMING SIGNALS YET. PATIENCE IS KEY.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="about" class="page-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;section id="about-us"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="container mx-auto max-w-[min(90vw,800px)] terminal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-2xl mb-[clamp(1rem,2vw,2rem)] h2-blinking"&gt;&gt; ABOUT ALMOST_MET.EXE V2.1.BGL&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&gt; **MISSION LOG:** ALMOST_MET.EXE is a decentralized missed connections board for Bangalore, operating on a simulated retro-futuristic network. We bridge the gap between two strangers who almost met in the digital age.</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&gt; **PROTOCOL:** All public posts are anonymous by default. Use your **Connection Points** (gained by posting) to unlock premium features or simply connect with the city's vibe.</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&gt; **SIGNAL SYSTEM:** If you find a connection that is for you, you can send an anonymous **Signal Back**. This transmits your handle and contact information to the original poster, who can then choose to reach out. Your privacy is prioritized.</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-lg text-[var(--primary)] mb-2"&gt;&gt; DEVELOPER CONTACT:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&gt; The 'almostmet.bangalore' project is an independent initiative. For bug reports, feature requests, or collaboration queries, please use the contact email in the footer.</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav id="bottom-nav"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#home" data-target="home" aria-label="Go to Home page"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="nav-icon"&gt;┌H┐&lt;/span&gt; &lt;span&gt;Home&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#profile" data-target="profile" aria-label="Go to My Profile page"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="nav-icon"&gt;┌P┐&lt;/span&gt; &lt;span&gt;Profile&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#about" data-target="about" aria-label="Go to About Us page"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="nav-icon"&gt;┌i┐&lt;/span&gt; &lt;span&gt;About&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#" id="mobile-logout-btn" aria-label="Logout of the application"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="nav-icon"&gt;┌X┐&lt;/span&gt; &lt;span&gt;Logout&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="modal" class="modal"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="filter-modal" class="modal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="modal-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 class="text-xl mb-[clamp(0.5rem,1vw,1rem)] h2-blinking"&gt;&gt; FILTER CONNECTIONS&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;form id="filter-form" class="space-y-[clamp(0.5rem,1vw,1rem)]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="block text-[var(--text)]"&gt;&gt; MIN DATE [YYYY-MM-DD]:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input id="filter-date" type="date" class="input-field mt-[clamp(0.25rem,0.5vw,0.5rem)]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="block text-[var(--text)]"&gt;&gt; LOCATION KEYWORD:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input id="filter-location" type="text" class="input-field mt-[clamp(0.25rem,0.5vw,0.5rem)]" placeholder="e.g., Indiranagar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="block text-[var(--text)]"&gt;&gt; CATEGORY:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;select id="filter-category" class="input-field mt-[clamp(0.25rem,0.5vw,0.5rem)]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value=""&gt;-- ALL CATEGORIES --&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Metro"&gt;Metro/Public Transport&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Cafe"&gt;Cafe/Restaurant&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Bar"&gt;Bar/Pub&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Street"&gt;Street/Market&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Event"&gt;Event/Concert&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Park"&gt;Park/Outdoor&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Other"&gt;Other&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button type="submit" class="btn-retro w-full"&gt;&gt; APPLY FILTER&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button type="button" id="reset-filter-btn" class="btn-retro w-full mt-2 bg-red-800 border-red-900 hover:bg-red-700"&gt;&gt; RESET FILTERS&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button type="button" class="btn-retro w-full mt-2" data-action="close-filter"&gt;&gt; CANCEL&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="calendar-modal" class="modal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="modal-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 class="text-xl mb-4 h2-blinking text-center"&gt;&gt; SELECT DATE &amp; TIME&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="terminal p-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between items-center mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="btn-retro" id="prev-month-btn"&gt;&lt;&lt; PREV&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span id="current-month-year" class="text-lg text-[var(--primary)] font-bold"&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="btn-retro" id="next-month-btn"&gt;NEXT &gt;&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="calendar-grid mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="calendar-header"&gt;SUN&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="calendar-header"&gt;MON&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="calendar-header"&gt;TUE&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="calendar-header"&gt;WED&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="calendar-header"&gt;THU&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="calendar-header"&gt;FRI&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="calendar-header"&gt;SAT&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="calendar-days" class="calendar-grid"&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="time-input-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="text-[var(--accent)]"&gt;&gt; TIME (HH:MM):&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="number" id="hour-input" class="input-field" min="0" max="23" step="1"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>placeholder="HH" value="12" style="width: 60px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-[var(--primary)] text-xl"&gt;:&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="number" id="minute-input" class="input-field" min="0" max="59" step="1"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>placeholder="MM" value="00" style="width: 60px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mt-4 flex flex-col space-y-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button type="button" id="set-datetime-btn" class="submit-button"&gt;&gt; CONFIRM DATE &amp; TIME&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button type="button" class="btn-retro w-full" data-action="close-calendar-modal"&gt;&gt; CANCEL&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer class="py-[clamp(1rem,2vw,1.5rem)] text-center text-[var(--text)]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container mx-auto px-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="mb-[clamp(0.5rem,1vw,1rem)]"&gt;&gt; CONTACT US: hello@almostmet.in&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="footer-links" class="flex flex-wrap justify-center items-center gap-[clamp(0.5rem,1vw,1rem)]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="https://x.com/almostmetbang" class="hover:text-[var(--accent)]"&gt;X&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="https://www.instagram.com/almostmet?igsh=N2h1NjFwd2gwcXBi" class="hover:text-[var(--accent)]"&gt;INSTAGRAM&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="https://facebook.com/almostmetbang" class="hover:text-[var(--accent)]"&gt;FACEBOOK&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="mt-[clamp(0.5rem,1vw,1rem)] text-[clamp(0.6rem,1.2vw,0.75rem)]"&gt;&gt; © 2025 ALMOST_MET.EXE - ALL RIGHTS RESERVED&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="footer-cursor"&gt;&gt; SCANNING FOR CONNECTIONS... &lt;span class="fade"&gt;█&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="sending-icon" class="sending-icon"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="points-popup"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- 1. UTILITY AND STATE FUNCTIONS ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!crypto.randomUUID) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>crypto.randomUUID = () =&gt; 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r &amp; 0x3 | 0x8);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return v.toString(16);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const userId = localStorage.getItem('userId') || crypto.randomUUID();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>localStorage.setItem('userId', userId);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const defaultSignals = '{}';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>let storedConnections = [];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const rawConnections = localStorage.getItem('connections');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const parsed = JSON.parse(rawConnections || '[]');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (Array.isArray(parsed)) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>storedConnections = parsed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.warn("Local storage 'connections' key was corrupted. Resetting to empty array.");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} catch (e) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>console.error("Critical error loading 'connections' from local storage, resetting.", e);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>let state = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>user: {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: userId,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>handle: localStorage.getItem(`handle_${userId}`) || 'ANON_USER',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>handleSet: localStorage.getItem(`handleSet_${userId}`) === 'true' || false,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>points: parseInt(localStorage.getItem(`points_${userId}`) || '0') || 0,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>replyEmail: localStorage.getItem(`replyEmail_${userId}`) || '',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>connections: storedConnections,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>signals: JSON.parse(localStorage.getItem(`signals_${userId}`) || defaultSignals),</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const handleRegex = /^[a-zA-Z0-9_]{3,20}$/;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function sanitizeInput(str) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (typeof str !== 'string') return '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return str.trim();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function formatDate(isoString) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!isoString) return 'N/A';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const date = new Date(isoString);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const yyyy = date.getFullYear();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const mm = String(date.getMonth() + 1).padStart(2, '0');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const dd = String(date.getDate()).padStart(2, '0');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const hh = String(date.getHours()).padStart(2, '0');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const min = String(date.getMinutes()).padStart(2, '0');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return `${yyyy}-${mm}-${dd} | ${hh}:${min}`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function saveState() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.setItem(`handle_${userId}`, state.user.handle);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.setItem(`handleSet_${userId}`, state.user.handleSet ? 'true' : 'false');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.setItem(`points_${userId}`, state.user.points);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.setItem(`replyEmail_${userId}`, state.user.replyEmail);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.setItem('connections', JSON.stringify(state.connections));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.setItem(`signals_${userId}`, JSON.stringify(state.signals));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function showPopup(message) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const popup = document.getElementById('points-popup');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>popup.textContent = message;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>popup.classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>popup.classList.remove('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, 1500);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>let currentSearchTerm = '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let currentFilters = { date: '', location: '', category: '' };</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- 2. TEMPLATES ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const templates = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>connectionListItem: c =&gt; `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="story-card" data-id="${c.id}" aria-label="View connection: ${c.title}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="card-meta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>[${c.category}] POSTED BY: ${c.user_id === userId ? state.user.handle : 'ANON_USER'}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4 class="card-title text-[var(--primary)] mt-1"&gt;${c.title}&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="card-meta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span><span class="s1">📍</span> ${c.location} | <span class="s1">⏰</span> ${formatDate(c.when)}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>myConnectionListItem: c =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const signals = state.signals[c.id] || [];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="story-card bg-[#1A2A44]" data-id="${c.id}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="card-meta flex justify-between items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span&gt;[${c.category}] STATUS: ${c.is_private ? 'PRIVATE' : 'PUBLIC'}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-red-400 font-bold"&gt;${signals.length} SIGNAL${signals.length !== 1 ? 'S' : ''}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="card-title text-[var(--primary)] mt-1"&gt;${c.title}&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="card-meta flex justify-between items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span&gt;<span class="s1">📍</span> ${c.location} | <span class="s1">⏰</span> ${formatDate(c.when)}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button class="btn-retro bg-transparent border-red-500 text-red-500 hover:bg-red-900 hover:text-white p-0.5 text-xs" data-action="delete-post" data-post-id="${c.id}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&gt; DEL</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>${signals.length &gt; 0 ? `&lt;button class="btn-retro mt-2 w-full bg-red-800 border-red-900 text-yellow-300" data-action="view-signals" data-post-id="${c.id}"&gt;&gt; VIEW ${signals.length} INCOMING SIGNAL${signals.length !== 1 ? 'S' : ''}&lt;/button&gt;` : ''}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>signalItem: s =&gt; `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="terminal p-3 bg-opacity-70 border-dashed border-[var(--primary)] mb-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-[var(--primary)]"&gt;&gt; SENDER HANDLE: &lt;span class="text-[var(--text)]"&gt;${s.senderHandle}&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-[var(--primary)]"&gt;&gt; CONTACT: &lt;span class="text-[var(--text)]"&gt;${s.senderContact}&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-[var(--accent)]"&gt;&gt; RECEIVED: ${formatDate(s.timestamp)}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>viewSignalsModal: (connection, signals) =&gt; `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="modal-content terminal p-[clamp(1rem,2vw,2rem)] w-full text-[var(--text)] flex flex-col"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-xl mb-2 h2-blinking"&gt;&gt; INCOMING SIGNALS FOR: ${connection.title}&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm mb-4 text-[var(--accent)]"&gt;TOTAL SIGNALS: ${signals.length}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="overflow-y-auto flex-1 p-2 border border-dashed border-[var(--accent)]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>${signals.length &gt; 0 ? signals.map(templates.signalItem).join('') : '&lt;p class="text-center text-[var(--accent)]"&gt;NO SIGNALS RECEIVED YET.&lt;/p&gt;'}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm mt-4 text-red-500 font-bold"&gt;REPLY EMAIL FOR THIS POST: ${connection.replyEmail || 'N/A'}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="btn-retro w-full mt-4" data-action="close-modal"&gt;&gt; CLOSE&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>connectionModal: (c, canSignal) =&gt; `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="modal-content terminal p-[clamp(0.5rem,1vw,1.5rem)] w-full text-[var(--text)] flex flex-col items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-xl mb-2 h2-blinking text-center"&gt;&gt; ${c.title}&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-[var(--accent)] mb-4"&gt;POST ID: ${c.id}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="w-full text-left space-y-2 mb-4 p-3 border border-dashed border-[var(--primary)] max-h-[60vh] overflow-y-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-lg text-[var(--primary)]"&gt;:: Location: &lt;span class="text-[var(--text)]"&gt;${c.location}&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-lg text-[var(--primary)]"&gt;:: Time: &lt;span class="text-[var(--text)]"&gt;${formatDate(c.when)}&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-lg text-[var(--primary)]"&gt;:: Category: &lt;span class="text-[var(--text)]"&gt;${c.category}&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;hr class="border-[var(--accent)] my-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-lg text-[var(--primary)]"&gt;:: Description:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="whitespace-pre-wrap text-sm"&gt;${c.description}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>${c.publicContact ? `&lt;p class="text-lg text-[var(--primary)]"&gt;:: Public Contact: &lt;span class="text-[var(--text)]"&gt;${c.publicContact}&lt;/span&gt;&lt;/p&gt;` : ''}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs text-[var(--accent)] mt-3"&gt;POSTED BY: ${c.user_id === userId ? state.user.handle : 'ANON_USER'} | POST DATE: ${formatDate(c.timestamp)}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>${canSignal &amp;&amp; !c.is_private ? `</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button class="submit-button w-full sm:w-2/3" data-action="signal-back" data-post-id="${c.id}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&gt; SEND SIGNAL BACK (COSTS 1 POINT)</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>` : c.user_id === userId ? `</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-center text-red-400 font-bold"&gt;&gt;&gt; THIS IS YOUR POST. VIEW SIGNALS IN PROFILE.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>` : c.is_private ? `</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-center text-red-400 font-bold"&gt;&gt;&gt; THIS IS A PRIVATE POST. UNAVAILABLE FOR SIGNAL.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>` : `</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-center text-red-400 font-bold"&gt;&gt;&gt; INSUFFICIENT POINTS (1 REQUIRED) TO SEND SIGNAL.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>`}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="btn-retro w-full sm:w-2/3 mt-2" data-action="close-modal"&gt;&gt; CLOSE WINDOW&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>signalFormModal: postId =&gt; `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="modal-content terminal p-[clamp(1rem,2vw,2rem)] w-full max-w-[min(90vw,450px)] text-[var(--text)]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-xl mb-4 h2-blinking text-center"&gt;&gt; INITIATE SIGNAL TRANSFER&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-center text-red-400 mb-4 font-bold"&gt;THIS ACTION COSTS 1 CONNECTION POINT.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;form id="signal-form" data-post-id="${postId}" class="space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;label class="block text-[var(--primary)]"&gt;&gt; YOUR HANDLE:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input type="text" value="${state.user.handle}" class="input-field" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;label class="block text-[var(--primary)]"&gt;&gt; YOUR CONTACT INFO (EMAIL/SOCIAL):&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input type="text" id="signal-contact" class="input-field"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                                </span>placeholder="Enter your contact for reply" required value="${state.user.replyEmail || ''}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p id="signal-error" class="error-text hidden text-center"&gt;&gt; ERROR: CONTACT INFO REQUIRED&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button type="submit" class="submit-button w-full"&gt;&gt; TRANSMIT SIGNAL&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button type="button" class="btn-retro w-full mt-2" data-action="close-modal"&gt;&gt; CANCEL&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- 3. MODAL HANDLERS ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function showModal(contentHtml, modalId = 'modal') {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const modal = document.getElementById(modalId);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>modal.innerHTML = contentHtml;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>modal.classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function closeModal(modalId = 'modal') {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById(modalId).classList.remove('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (modalId === 'modal') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('modal').innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function showConnectionModal(id) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const connection = state.connections.find(c =&gt; c.id === id);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!connection) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showPopup("&gt;&gt; ERROR: CONNECTION NOT FOUND.");</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const canSignal = connection.user_id !== userId &amp;&amp; state.user.points &gt;= 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showModal(templates.connectionModal(connection, canSignal));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- 4. CALENDAR LOGIC ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let currentCalendarDate = new Date();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let selectedDate = null;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function updateCalendarStateFromDisplay() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const isoString = document.getElementById('when-iso').value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (isoString) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>selectedDate = new Date(isoString);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentCalendarDate = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>selectedDate = new Date(); // Default to today</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentCalendarDate = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderCalendar() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const year = currentCalendarDate.getFullYear();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const month = currentCalendarDate.getMonth();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const today = new Date();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('current-month-year').textContent = `${monthNames[month]} ${year}`;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const daysContainer = document.getElementById('calendar-days');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>daysContainer.innerHTML = '';</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const firstDayOfWeek = new Date(year, month, 1).getDay();<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const daysInMonth = new Date(year, month + 1, 0).getDate();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (let i = 0; i &lt; firstDayOfWeek; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const emptyCell = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>emptyCell.classList.add('day-cell', 'empty');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>daysContainer.appendChild(emptyCell);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (let day = 1; day &lt;= daysInMonth; day++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const dayCell = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>dayCell.classList.add('day-cell');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>dayCell.textContent = day;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>dayCell.dataset.day = day;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>const isToday = today.getFullYear() === year &amp;&amp;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                                </span>today.getMonth() === month &amp;&amp;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                                </span>today.getDate() === day;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (isToday) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>dayCell.classList.add('today');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (selectedDate &amp;&amp;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>selectedDate.getFullYear() === year &amp;&amp;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>selectedDate.getMonth() === month &amp;&amp;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>selectedDate.getDate() === day) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>dayCell.classList.add('selected');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>dayCell.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>daysContainer.querySelectorAll('.selected').forEach(el =&gt; el.classList.remove('selected'));</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>dayCell.classList.add('selected');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (selectedDate) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>selectedDate.setFullYear(year, month, day);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const hour = parseInt(document.getElementById('hour-input').value) || 0;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const minute = parseInt(document.getElementById('minute-input').value) || 0;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>selectedDate = new Date(year, month, day, hour, minute);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>daysContainer.appendChild(dayCell);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function changeMonth(delta) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>currentCalendarDate.setMonth(currentCalendarDate.getMonth() + delta);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderCalendar();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function openCalendarModal() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateCalendarStateFromDisplay();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderCalendar();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const now = selectedDate;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('hour-input').value = String(now.getHours()).padStart(2, '0');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('minute-input').value = String(now.getMinutes()).padStart(2, '0');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('calendar-modal').classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function confirmDateTime() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const hourInput = document.getElementById('hour-input');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const minuteInput = document.getElementById('minute-input');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const hour = parseInt(hourInput.value) || 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const minute = parseInt(minuteInput.value) || 0;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (hour &lt; 0 || hour &gt; 23 || minute &lt; 0 || minute &gt; 59) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showPopup("&gt;&gt; ERROR: INVALID TIME VALUE (HH: 0-23, MM: 0-59).");</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!selectedDate) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>selectedDate = new Date(currentCalendarDate.getFullYear(), currentCalendarDate.getMonth(), new Date().getDate());</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>selectedDate.setHours(hour, minute, 0, 0);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const isoString = selectedDate.toISOString().substring(0, 16);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const displayString = formatDate(selectedDate);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('when-iso').value = isoString;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('when-display').value = displayString;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('when-error').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>closeModal('calendar-modal');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- 5. CORE LOGIC ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function applyFilters(connections) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let filtered = connections;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const term = currentSearchTerm.toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const dateFilter = currentFilters.date;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const locationFilter = currentFilters.location.toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const categoryFilter = currentFilters.category;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>filtered = filtered.filter(c =&gt; !c.is_private);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (term) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>filtered = filtered.filter(c =&gt;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>c.title.toLowerCase().includes(term) ||</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>c.location.toLowerCase().includes(term) ||</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>c.description.toLowerCase().includes(term)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (dateFilter) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>filtered = filtered.filter(c =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>return c.when &amp;&amp; new Date(c.when).getTime() &gt;= new Date(dateFilter).getTime();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (locationFilter) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>filtered = filtered.filter(c =&gt;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>c.location.toLowerCase().includes(locationFilter)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (categoryFilter) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>filtered = filtered.filter(c =&gt;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>c.category === categoryFilter</p>
+<p class="p1"><span class="Apple-converted-space">                </span>);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>return filtered.sort((a, b) =&gt; new Date(b.timestamp) - new Date(a.timestamp));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderConnections() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const connectionListEl = document.getElementById('connection-list');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const filteredConnections = applyFilters(state.connections);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (filteredConnections.length === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>connectionListEl.innerHTML = '&lt;p class="text-center text-[var(--accent)] col-span-full py-4"&gt;&gt; NO PUBLIC CONNECTIONS MATCHING FILTERS. TRY ADJUSTING YOUR SEARCH PARAMETERS.&lt;/p&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>connectionListEl.innerHTML = filteredConnections.map(c =&gt; templates.connectionListItem(c)).join('');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.querySelectorAll('#connection-list .story-card').forEach(card =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>card.addEventListener('click', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (!e.target.closest('[data-action="delete-post"]')) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>showConnectionModal(card.dataset.id);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function filterConnections() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>currentSearchTerm = document.getElementById('search').value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderConnections();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderMyConnections() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const myConnectionListEl = document.getElementById('my-connection-list');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const myConnections = state.connections</p>
+<p class="p1"><span class="Apple-converted-space">                </span>.filter(c =&gt; c.user_id === userId)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>.sort((a, b) =&gt; new Date(b.timestamp) - new Date(a.timestamp));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (myConnections.length === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>myConnectionListEl.innerHTML = '&lt;p class="text-center text-[var(--accent)]"&gt;&gt; NO POSTS FOUND. POST ONE ON THE HOME PAGE.&lt;/p&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>myConnectionListEl.innerHTML = myConnections.map(templates.myConnectionListItem).join('');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>myConnectionListEl.querySelectorAll('[data-action="delete-post"]').forEach(btn =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>btn.addEventListener('click', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>e.stopPropagation();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const postId = e.currentTarget.dataset.postId;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>showDeleteConfirmation(postId);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>myConnectionListEl.querySelectorAll('[data-action="view-signals"]').forEach(btn =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>btn.addEventListener('click', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>e.stopPropagation();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>renderSignalsModal(e.currentTarget.dataset.postId);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function showDeleteConfirmation(postId) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showModal(`</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="modal-content terminal p-4 text-[var(--text)] text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xl text-red-500 mb-4 font-bold"&gt;&gt; WARNING: DELETE POST?&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="mb-4 text-sm text-[var(--accent)]"&gt;This action cannot be undone. All associated signals will be lost.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="btn-retro bg-red-800 border-red-900 hover:bg-red-700 w-full mb-2" data-confirm-action="confirm-delete-yes" data-post-id="${postId}"&gt;&gt; CONFIRM DELETION&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="btn-retro w-full" data-action="close-modal"&gt;&gt; CANCEL&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function deletePost(postId) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>state.connections = state.connections.filter(c =&gt; c.id !== postId);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (state.signals[postId]) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>delete state.signals[postId];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>saveState();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderConnections();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderMyConnections();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showPopup("&gt;&gt; POST DELETED. MEMORY PURGED.");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderSignalsModal(postId) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const connection = state.connections.find(c =&gt; c.id === postId);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!connection) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showPopup("&gt;&gt; ERROR: POST NOT FOUND.");</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const signals = state.signals[postId] || [];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showModal(templates.viewSignalsModal(connection, signals));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderProfile() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('profile-user-id').textContent = userId;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('profile-points').textContent = state.user.points;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('profile-handle').value = state.user.handle;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('profile-email').textContent = state.user.replyEmail || 'N/A';</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const saveBtn = document.getElementById('save-handle-btn');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!state.user.handleSet) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>saveBtn.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>saveBtn.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderMyConnections();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function saveHandle() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const input = document.getElementById('profile-handle');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const handle = sanitizeInput(input.value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const errorEl = document.getElementById('handle-error');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!handleRegex.test(handle)) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>errorEl.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>errorEl.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>state.user.handle = handle;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>state.user.handleSet = true;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('save-handle-btn').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>saveState();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderProfile();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showPopup("&gt;&gt; HANDLE SAVED. IDENTITY SECURED.");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function sendSignal(postId, contact) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (state.user.points &lt; 1) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showPopup("&gt;&gt; ERROR: INSUFFICIENT CONNECTION POINTS.");</p>
+<p class="p1"><span class="Apple-converted-space">                </span>closeModal();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return false;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!contact) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('signal-error').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return false;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('signal-error').classList.add('hidden');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const signal = {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>senderHandle: state.user.handle,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>senderContact: sanitizeInput(contact),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>timestamp: new Date().toISOString()</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!state.signals[postId]) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>state.signals[postId] = [];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>state.signals[postId].push(signal);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>state.user.points -= 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>saveState();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>closeModal();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showPopup("&gt;&gt; SIGNAL SENT. 1 POINT DEDUCTED. WAITING FOR REPLY...");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderProfile();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return true;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- 6. INITIALIZATION &amp; EVENT LISTENERS ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function setupModalListeners() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>['modal', 'filter-modal', 'calendar-modal'].forEach(modalId =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById(modalId).addEventListener('click', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const action = e.target.dataset.action;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const confirmAction = e.target.dataset.confirmAction;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (action === 'close-modal' || action === 'close-filter' || action === 'close-calendar-modal') {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>closeModal(modalId);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>} else if (confirmAction === 'confirm-delete-yes') {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const postId = e.target.dataset.postId;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>closeModal(modalId);</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>deletePost(postId);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>} else if (action === 'signal-back') {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const postId = e.target.dataset.postId;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>if (state.user.points &gt;= 1) {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>showModal(templates.signalFormModal(postId));</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>document.getElementById('signal-form').addEventListener('submit', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>const contact = document.getElementById('signal-contact').value;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>const formPostId = e.target.dataset.postId;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>if (sendSignal(formPostId, contact)) {</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>if (emailRegex.test(contact) &amp;&amp; contact !== state.user.replyEmail) {</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>state.user.replyEmail = contact;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>saveState();</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>showPopup("&gt;&gt; ERROR: 1 POINT REQUIRED TO SEND SIGNAL.");</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function setupEventListeners() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('description').addEventListener('input', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('char-count').textContent = e.target.value.length;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('save-handle-btn').addEventListener('click', saveHandle);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('filter-btn').addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('filter-modal').classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('filter-form').addEventListener('submit', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentFilters.date = document.getElementById('filter-date').value;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentFilters.location = sanitizeInput(document.getElementById('filter-location').value);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentFilters.category = document.getElementById('filter-category').value;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('search').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentSearchTerm = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>renderConnections();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>closeModal('filter-modal');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('reset-filter-btn').addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentFilters = { date: '', location: '', category: '' };</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('filter-date').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('filter-location').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('filter-category').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('search').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentSearchTerm = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>renderConnections();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>closeModal('filter-modal');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.querySelectorAll('[data-action="open-calendar"]').forEach(el =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>el.addEventListener('click', openCalendarModal);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('prev-month-btn').addEventListener('click', () =&gt; changeMonth(-1));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('next-month-btn').addEventListener('click', () =&gt; changeMonth(1));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('set-datetime-btn').addEventListener('click', confirmDateTime);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.querySelector('[data-action="close-calendar-modal"]').addEventListener('click', () =&gt; closeModal('calendar-modal'));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('submit-form').addEventListener('submit', submitFormHandler);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>setupNavigation();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>setupModalListeners();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('logout-btn').addEventListener('click', logout);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('mobile-logout-btn').addEventListener('click', logout);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>async function submitFormHandler(e) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>e.preventDefault();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>let isValid = true;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const titleEl = document.getElementById('title');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const whereEl = document.getElementById('where');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const descEl = document.getElementById('description');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const emailEl = document.getElementById('reply-email');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const whenIsoEl = document.getElementById('when-iso');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const title = sanitizeInput(titleEl.value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const when = whenIsoEl.value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const where = sanitizeInput(whereEl.value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const category = document.getElementById('category').value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const description = sanitizeInput(descEl.value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const publicContact = sanitizeInput(document.getElementById('contact').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const replyEmail = sanitizeInput(emailEl.value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const isPrivate = document.getElementById('private').checked;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!title) { document.getElementById('title-error').classList.remove('hidden'); isValid = false; } else { document.getElementById('title-error').classList.add('hidden'); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!where) { document.getElementById('where-error').classList.remove('hidden'); isValid = false; } else { document.getElementById('where-error').classList.add('hidden'); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!description) { document.getElementById('description-error').classList.remove('hidden'); isValid = false; } else { document.getElementById('description-error').classList.add('hidden'); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!when) { document.getElementById('when-error').classList.remove('hidden'); isValid = false; } else { document.getElementById('when-error').classList.add('hidden'); }</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (replyEmail &amp;&amp; !emailRegex.test(replyEmail)) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('email-error').classList.remove('hidden'); isValid = false;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('email-error').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!isValid) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const newConnection = {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: crypto.randomUUID(),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>user_id: userId,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>title: title,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>when: when,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>location: where,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>category: category || 'Other',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>description: description,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>publicContact: publicContact,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>replyEmail: replyEmail,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>is_private: isPrivate,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>timestamp: new Date().toISOString(),</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>state.connections.push(newConnection);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!isPrivate) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>state.user.points += 1;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showPopup("&gt;&gt; POST TRANSMITTED. +1 CONNECTION POINT.");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showPopup("&gt;&gt; PRIVATE POST TRANSMITTED. NO POINT GAINED.");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (replyEmail &amp;&amp; !state.user.replyEmail) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>state.user.replyEmail = replyEmail;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>saveState();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>e.target.reset();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (replyEmail) { document.getElementById('reply-email').value = replyEmail; }</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('when-iso').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('when-display').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>selectedDate = null;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('char-count').textContent = '0';</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('submit-message').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; document.getElementById('submit-message').classList.add('hidden'), 3000);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderConnections();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderProfile();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.querySelector('[data-target="profile"]').click();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function setupNavigation() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const pages = document.querySelectorAll('.page-content');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const navLinks = document.querySelectorAll('[data-target]');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const header = document.querySelector('header');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const main = document.querySelector('main');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>function switchPage(targetId) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>pages.forEach(page =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>page.classList.remove('active');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (page.id === targetId) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>page.classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                </span>navLinks.forEach(link =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>link.classList.remove('active', 'text-[var(--primary)]');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (link.dataset.target === targetId) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>link.classList.add('active', 'text-[var(--primary)]');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (targetId === 'profile') {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>renderProfile();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>window.history.pushState(null, null, `#${targetId}`);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>navLinks.forEach(link =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>link.addEventListener('click', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const target = e.currentTarget.dataset.target;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>switchPage(target);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>function handleInitialHash() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const hash = window.location.hash.substring(1);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const initialTarget = hash &amp;&amp; document.getElementById(hash) ? hash : 'home';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>switchPage(initialTarget);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>handleInitialHash();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>window.addEventListener('hashchange', handleInitialHash);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const loadingScreen = document.getElementById('loading-screen');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.addEventListener('keydown', finishLoading);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.addEventListener('click', finishLoading);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>function finishLoading() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (loadingScreen.style.display === 'none') return;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>loadingScreen.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>header.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>main.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.removeEventListener('keydown', finishLoading);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.removeEventListener('click', finishLoading);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function logout() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.removeItem(`handle_${userId}`);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.removeItem(`handleSet_${userId}`);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.removeItem(`points_${userId}`);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.removeItem(`replyEmail_${userId}`);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.removeItem(`signals_${userId}`);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.removeItem('userId');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>window.location.reload();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function initApp() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (state.connections.length === 0 &amp;&amp; localStorage.getItem('isInitialized') !== 'true') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>state.connections = [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>id: crypto.randomUUID(), user_id: 'sample1', title: 'The Silent Reader at Atta Galatta', when: '2025-10-10T15:30', location: 'Koramangala, Atta Galatta', category: 'Cafe', description: 'You were reading a tattered copy of "The God of Small Things" and had a bright yellow messenger bag. I was too shy to ask about the book. I was wearing a black Nirvana tee.', publicContact: '@booksandbengaluru', replyEmail: '', is_private: false, timestamp: new Date(Date.now() - 86400000).toISOString()</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>id: crypto.randomUUID(), user_id: 'sample2', title: 'Purple Hair at the Cubbon Park Metro', when: '2025-10-12T18:45', location: 'Cubbon Park Metro Station (Green Line)', category: 'Metro', description: 'We made eye contact while rushing for the last train. Your hair was the color of neon purple, and you were carrying a guitar case. You smiled, and I froze. Missed my stop because of you. Please signal!', publicContact: '', replyEmail: 'purple.signal@email.com', is_private: false, timestamp: new Date(Date.now() - 3600000).toISOString()</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>id: crypto.randomUUID(), user_id: userId, title: 'Private Test Post', when: '2025-10-14T10:00', location: 'My Desk', category: 'Other', description: 'This is a private post used for testing. You should not see this on the main board.', publicContact: '', replyEmail: 'private@test.com', is_private: true, timestamp: new Date().toISOString()</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>state.signals[state.connections[0].id] = [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ senderHandle: 'SignalTest1', senderContact: 'test@email.com', timestamp: new Date().toISOString() }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>state.signals[state.connections[1].id] = [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ senderHandle: 'BookWormBGL', senderContact: '@InstaBookworm', timestamp: new Date().toISOString() },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ senderHandle: 'GuitarHero', senderContact: 'hero@email.com', timestamp: new Date().toISOString() }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>saveState();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>localStorage.setItem('isInitialized', 'true');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const now = new Date();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const localISOTime = new Date(now.getTime() - (now.getTimezoneOffset() * 60000)).toISOString().substring(0, 16);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('when-iso').value = localISOTime;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>setup</p>
+</body>
+</html>
